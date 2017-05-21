@@ -1,5 +1,5 @@
 from django.core.cache.backends.locmem import LocMemCache
-from base_classes import CacheBase
+from .base_classes import CacheBase
 from hydro.common.configurator import Configurator
 
 __author__ = 'moshebasanchig'
@@ -13,7 +13,7 @@ class InMemoryCache(CacheBase):
     def get(self, key):
         try:
             value = self.cache.get(key)
-        except Exception, err:
+        except Exception as err:
             value = None
         return value
 
@@ -33,4 +33,4 @@ if __name__ == '__main__':
     cache = InMemoryCache()
     cache.put(key, val, None)
     sleep(5)
-    print cache.get(key)
+    print(cache.get(key))

@@ -11,4 +11,4 @@ if __name__ == '__main__':
         'db_password': 'yyy'
     }
     con = MySqlConnector(params)
-    print con.execute('select 1 a')
+    print(con.execute('select 1 a'))

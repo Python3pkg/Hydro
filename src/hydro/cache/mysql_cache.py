@@ -1,5 +1,5 @@
 from hydro.common.configurator import Configurator
-from base_classes import CacheBase
+from .base_classes import CacheBase
 from hydro.cache.in_memory import InMemoryCache
 from django.core.management.commands import createcachetable
 from pandas.core.frame import DataFrame
@@ -23,7 +23,7 @@ class MySQLCache(CacheBase):
         # creating a table if not exist
         try:
             self.cache.get('a')
-        except Exception, err:
+        except Exception as err:
             if err.args[0] in (1146, 1049):  # 1146 - table doesn't exist, 1049 - unknown database?
                 cmd = createcachetable.Command().execute(cache_table,
                                                          **{'database': cache_db,
@@ -65,4 +65,4 @@ if __name__ == '__main__':
     val = JJ()
     cache = MySQLCache()
     #cache.put(key=key, value=val, ttl=None)
-    print  cache.get(key=key)
+    print(cache.get(key=key))

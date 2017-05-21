@@ -1,6 +1,6 @@
 __author__ = 'moshebasanchig'
 
-from base_classes import Base
+from .base_classes import Base
 import pandas as pd
 
 

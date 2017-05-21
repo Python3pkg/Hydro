@@ -1,4 +1,4 @@
-from __future__ import absolute_import
+
 
 from hydro.connectors.base_classes import DBBaseConnector
 from hydro.exceptions import HydroException
@@ -51,4 +51,4 @@ if __name__ == '__main__':
         'db_password': 'xxx'
     }
     con = MySqlConnector(params)
-    print con.execute('select 1 a')
+    print(con.execute('select 1 a'))

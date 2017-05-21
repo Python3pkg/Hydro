@@ -1,8 +1,8 @@
 __author__ = 'moshebasanchig'
 
 from importlib import import_module
-from base_classes import Base
-from connectors.base_classes import ConnectorBase
+from .base_classes import Base
+from .connectors.base_classes import ConnectorBase
 from hydro.exceptions import HydroException
 DSN = 'dsn'
 
@@ -38,8 +38,8 @@ class ConnectionPool(Base):
         path = "hydro.connectors.%s" % conn_conf.get('source_type')
         module = import_module(path)
         classes = [getattr(module, x) for x in dir(module) if isinstance(getattr(module, x), type)]
-        connector_classes = filter(lambda x: issubclass(x, ConnectorBase) and x.__name__ not in
-                                  ('ConnectorBase', 'DBBaseConnector'), classes)
+        connector_classes = [x for x in classes if issubclass(x, ConnectorBase) and x.__name__ not in
+                                  ('ConnectorBase', 'DBBaseConnector')]
         if len(classes) < 1 or len(connector_classes) < 1:
             raise HydroException("Connector class doesn't exist")
         con_cls = connector_classes[0]

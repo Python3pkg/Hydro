@@ -1,5 +1,5 @@
 __author__ = 'yanivshalev'
-from settings_base import *
+from .settings_base import *
 
 ENV = 'dev'
 DEBUG = True

@@ -30,4 +30,4 @@ if __name__ == '__main__':
         'db_password': ''
     }
     con = VerticaConnector(params)
-    print con.execute('select 1')
+    print(con.execute('select 1'))

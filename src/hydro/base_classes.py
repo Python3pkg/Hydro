@@ -38,7 +38,7 @@ class HydroCommandTemplate(object):
 
     def parse(self, params):
         context = Context()
-        for key, value in params.iteritems():
+        for key, value in params.items():
             if value:
                 context[key] = value.to_string()
 
@@ -142,4 +142,4 @@ class OptimizerBase(Base):
 
 if __name__ == '__main__':
     #print ConnectorBase().execute('select 1')
-    print HydroStr(1).to_string()
+    print(HydroStr(1).to_string())

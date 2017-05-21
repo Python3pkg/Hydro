@@ -2,8 +2,8 @@ __author__ = 'moshebasanchig'
 
 from hydro.hydro_cluster import LocalHydro
 from hydro.exceptions import HydroException
-from geo_queries.geo_widget_topology import GeoWidgetTopology
-from topology_injection.topology_injection_topology import TopologyInjectionTopology
+from .geo_queries.geo_widget_topology import GeoWidgetTopology
+from .topology_injection.topology_injection_topology import TopologyInjectionTopology
 from hydro.common.configurator import Configurator
 from hydro.common.logger import Logger
 import logging
@@ -48,6 +48,6 @@ if __name__ == '__main__':
         result = local_hydro.submit('GeoWidget', params)
 
         local_hydro.submit('GeoWidget', params)  # the cache should be used here
-    except HydroException, e:
-        print "Encountered an exception:", e.message
+    except HydroException as e:
+        print("Encountered an exception:", e.message)
     result = local_hydro.submit('GeoWidget', params)

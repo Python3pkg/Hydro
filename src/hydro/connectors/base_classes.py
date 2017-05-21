@@ -47,7 +47,7 @@ class ConnectorBase(object):
             res = self._execute(command)
             return res
 
-        except Exception, err:
+        except Exception as err:
             self.logger.error('Error: {0}'.format(err.message))
             self.close()
             raise err

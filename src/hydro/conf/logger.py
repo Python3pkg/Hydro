@@ -1,5 +1,5 @@
 import os
-from settings import *
+from .settings import *
 
 __author__ = 'yanivshalev'
 """

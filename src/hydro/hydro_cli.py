@@ -26,7 +26,7 @@ def scaffold(args):
                 django_settings.configure()
                 django.setup()
     if os.path.exists(dir_name):
-        print 'directory already exists. skipping.'
+        print('directory already exists. skipping.')
         sys.exit(1)
     os.makedirs(dir_name)
     open('%s/__init__.py' % dir_name, 'w').close()
@@ -46,7 +46,7 @@ def scaffold(args):
     print result.stream
     ```
     """
-    print usage.format(dir_name=dir_name, topology_name=topology_name)
+    print(usage.format(dir_name=dir_name, topology_name=topology_name))
 
 
 def listen(args):

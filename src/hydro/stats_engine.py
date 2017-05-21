@@ -8,7 +8,7 @@ class StatsEngine(object):
     def __init__(self):
         if Configurator.USE_STATS_DB:
             # TODO: support stats engines which doesn't rely on mysql
-            from connectors.mysql import MySqlConnector
+            from .connectors.mysql import MySqlConnector
 
             params = {
                 'connection_type': 'connection_string',
@@ -25,7 +25,7 @@ class StatsEngine(object):
 
     def _gather_statistics(self, source_id, segment_id):
 
-        keys = Configurator.OPTIMIZER_STATISTICS['ALL'].keys()
+        keys = list(Configurator.OPTIMIZER_STATISTICS['ALL'].keys())
         res = self._conn.execute("SELECT {0} FROM {1} WHERE source_id = '{2}' and segment_id = '{3}' "
                                  .format(','.join(keys), 'source_statistics', source_id, segment_id))
         return res

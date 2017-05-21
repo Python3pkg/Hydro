@@ -1,7 +1,7 @@
 from hydro.common.execution_plan import ExecutionPlan
 from hydro.transformers import Transformers
 from hydro.query_engine_factory import QueryEngineFactory
-from base_classes import Base
+from .base_classes import Base
 from hydro.common.utils import create_cache_key
 from hydro.cache import CacheEnginesFactory
 import inspect

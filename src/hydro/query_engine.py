@@ -1,7 +1,7 @@
 __author__ = 'moshebasanchig'
 
 from importlib import import_module
-from base_classes import Base, HydroCommandTemplate
+from .base_classes import Base, HydroCommandTemplate
 from hydro.common.utils import create_cache_key
 from copy import deepcopy
 

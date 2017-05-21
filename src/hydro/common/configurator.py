@@ -81,4 +81,4 @@ class Configurator(object):
         return conf
 
 if __name__ == '__main__':
-    print Configurator.APPLICATION_NAME
+    print(Configurator.APPLICATION_NAME)

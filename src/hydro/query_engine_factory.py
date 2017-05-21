@@ -1,7 +1,7 @@
 __author__ = 'moshebasanchig'
 
 from hydro.query_engine import QueryEngine
-from connector_factory import ConnectorHandler
+from .connector_factory import ConnectorHandler
 
 
 class QueryEngineFactory(object):
